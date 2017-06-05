@@ -1,0 +1,46 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  Ваши заказы  {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<P> </P>
+<P> </P>
+
+
+<nav class="navmenu navmenu-default col-xs-12 col-md-2" role="navigation">
+    <ul class="nav navmenu-nav">
+    <li><a href="http://127.0.0.1:8000/order/customer/"><font size="4" color="#440B84" face="monospace"><strong>История заказов</strong></font></a></li>
+    </ul>
+
+</nav>
+
+<div class="container col-sm-9" >
+    <h1><font size="6" color="#9f2e72" face="Segoe Print">Ваши заказы</font></h1>
+
+    <table class="table" >
+    {% for id in orderid_list %}
+        <tr>
+            <th><font size="4" color="#9f2e72" face="Segoe Print">Заказ № {{ id }}</font></th>
+            <td><font size="4" color="#440B84" face="monospace"><a href="http://127.0.0.1:8000/order/customer/{{ id }}/" class="btn btn-primary">Посмотреть детали</a></font></td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+<div>
+<p>
+
+
+
+
+
+
+</p>
+</div>
+{% endblock %}
+
+
+
+
