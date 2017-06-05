@@ -1,0 +1,52 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  Оформление заказа
+{% endblock %}
+
+{% block content %}
+
+
+<div class="col-sm-4">
+  <div class="panel panel-primary" >
+  <div class="panel-heading">
+    <h2 class="panel-title">Данные о заказчике</h2>
+  </div>
+  <div class="panel-body">
+<div class="well well-lg">
+    <h3></h3>
+<form  method="post">
+    {% csrf_token %}
+{#    {% bootstrap_form form %}#}
+    {{ form.as_p }}
+    &nbsp;
+    <input type="submit" class="btn btn-primary" value="Отправить">
+</form>
+  </div>
+</div>
+</div></div>
+
+  <font class="order-info col-sm-8">
+    <h2><font size="5" color="#440B84" face="Segoe Print">Ваш заказ</font></h2>
+    <ul>
+      {% for item in cart  %}
+        <li>
+          <font size="5" color="#9f2e72" face="monospace"> <strong>{{ item.product.name }} | Количество: {{ item.quantity }} | Цена: {{ item.total_price }}
+        </li>
+      {% endfor %}
+      {% if cart.cupon %}
+        <li>
+          "{{ cart.cupon.code }}" (на {{ cart.cupon.discount }}% меньше)
+          <span> - {{ cart.get_discount|floatformat:"2"}} руб.  </strong></span>
+        </li>
+
+
+
+      {% endif %}
+    </ul>
+    <p><strong>Всего:</strong> {{ cart.get_total_price_after_discount|floatformat:"2"}} руб.</p>
+   </font>
+<p><font size="2,5" color="#440B84" face="Segoe Print">(Стоимость доставки по указанному адресу включена в стоимость заказа) </font></div>
+
+{% endblock %}
