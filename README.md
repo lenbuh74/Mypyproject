@@ -24,20 +24,38 @@
 
 ### С интерфейсом проекта Вы можете ознакомиться по прикрепленным изображением ниже:
 
-#### Каталог товаров
+#### Каталог товаров 
+
 ![alt text](https://cloud.githubusercontent.com/assets/22623962/26783051/ed0b7538-49fe-11e7-8c2d-30524f3ed846.jpg)
 
 
 #### Личный кабинет и детали одного из заказов 
+
 ![alt text](https://cloud.githubusercontent.com/assets/22623962/26783720/5bbbdfb0-4a02-11e7-8786-906df4ba20a8.jpg)
 
 ![alt text](https://cloud.githubusercontent.com/assets/22623962/26783780/b475280a-4a02-11e7-80bd-6aa333e1c858.jpg)
 
 
+
+#### Форма обратной связи 
+
+![alt text](https://cloud.githubusercontent.com/assets/22623962/26783986/c08021bc-4a03-11e7-9ef6-242eb9e0e1e6.jpg)
+
+
+
 #### Описание товара, отзывы
+
 ![alt text](https://cloud.githubusercontent.com/assets/22623962/26783511/4a17e584-4a01-11e7-9703-52f2a08c0306.jpg)
 
 
 
 #### Корзина покупателя 
+
 ![alt text](https://cloud.githubusercontent.com/assets/22623962/26783639/df84b552-4a01-11e7-9f3b-6ac06c9f0eef.jpg)
+
+
+
+#### Оформление заказа 
+
+![alt text]()
+
