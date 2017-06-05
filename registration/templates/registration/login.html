@@ -1,0 +1,30 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+Войти  {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<div class="col-sm-4">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2 class="panel-title">Войти в систему</h2>
+  </div>
+  <div class="panel-body">
+<div class="well well-lg">
+    <h3></h3>
+<form  method="post">
+    {% csrf_token %}
+{#    {% bootstrap_form form %}#}
+    {{ form.as_p }}
+    &nbsp;
+    <input type="submit" class="btn btn-primary" value="Войти в систему" / class="clearfix">
+</form>
+  </div>
+</div>
+</div>
+  </div>
+{% endblock %}
+

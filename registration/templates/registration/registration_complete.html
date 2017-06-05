@@ -1,0 +1,13 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  Регистрация прошла успешно  {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1><font size="5" color="#440B84" face="Segoe Print">Регистрация завершена</font></h1>
+<p><font size="4" color="#9f2e72" face="monospace"><strong>Спасибо за уделённое время. На ваш e-mail отправлен
+код подтверждения. Необходимо подтвердить регистрацию,
+просто кликнув по указанной ссылке.</strong></font></p><br/><br/>
+{% endblock %}
