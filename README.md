@@ -57,5 +57,19 @@
 
 #### Оформление заказа 
 
-![alt text]()
+![alt text](https://cloud.githubusercontent.com/assets/22623962/26789590/717215ec-4a19-11e7-8901-d6df40d087f5.jpg)
+
+
+#### Оплата заказа
+
+![alt text](https://cloud.githubusercontent.com/assets/22623962/26789889/6e8a8f3e-4a1a-11e7-9f5d-0ac5fa8846c7.jpg)
+
+![alt text](https://cloud.githubusercontent.com/assets/22623962/26789927/8e6a6cf2-4a1a-11e7-9b3a-3e6c138ccaf6.jpg)
+
+![alt text](https://cloud.githubusercontent.com/assets/22623962/26789949/a1f0c76c-4a1a-11e7-8798-d27cb1446e4b.jpg)
+
+
+#### Информирование по электронной почте
+
+![alt text](https://cloud.githubusercontent.com/assets/22623962/26790202/93010644-4a1b-11e7-8454-9848920e604e.jpg)
 
