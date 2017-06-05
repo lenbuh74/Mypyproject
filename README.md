@@ -73,3 +73,8 @@
 
 ![alt text](https://cloud.githubusercontent.com/assets/22623962/26790202/93010644-4a1b-11e7-8454-9848920e604e.jpg)
 
+
+#### Панель администратора
+
+![alt text](https://cloud.githubusercontent.com/assets/22623962/26790833/dee90d8e-4a1d-11e7-92f1-86e04eb9ccd4.jpg)
+![alt text](https://cloud.githubusercontent.com/assets/22623962/26791422/b8f632b2-4a1f-11e7-8d8b-e182ad85c0c9.jpg)
