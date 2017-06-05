@@ -1,0 +1,14 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Успешная оплата{% endblock %}
+
+{% block content %}
+  <h1><font size="6" color="#440B84" face="Segoe Print">Успешная оплата</font></h1>
+  <p><font color="#9f2e72" face="monospace">Благодарим вас за покупку!</font></p>
+  <p class="text-right">
+    <a href="{% url "shop:ProductList"%}" class="btn btn-primary">Продолжить Шопинг</a>
+
+  </p>
+{% endblock %}
+
+
