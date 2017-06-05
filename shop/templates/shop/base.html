@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+
+  <!-- Styles -->
+  <!--<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">-->
+  <!--<link rel="stylesheet" href="{% static "css/style.css" %}">-->
+  <!--<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-Xqcy5ttufkC3rBa8EdiAyA1VgOGrmel2Y+wxm4K3kI3fcjTWlDWrlnxyD6hOi3PF" crossorigin="anonymous">-->
+<!--<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-1L94saFXWAvEw88RkpRz8r28eQMvt7kG9ux3DdCqya/P3CfLNtgqzMnyaUa49Pl2" crossorigin="anonymous">-->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-1L94saFXWAvEw88RkpRz8r28eQMvt7kG9ux3DdCqya/P3CfLNtgqzMnyaUa49Pl2" crossorigin="anonymous">
+</head>
+
+<!--<div class="jumbotron vertical-center" style="background-image: url(https://apf.mail.ru/cgi-bin/readmsg/zc.jpg?id=14964863160000000746%3B0%3B1&x-email=lenbuh74%40mail.ru&exif=1&bs=3005&bl=114542&ct=image%2Fjpeg&cn=zc.jpg&cte=binary); height:200 px"</div>-->
+
+
+
+<body>
+  <section id="header" >
+    <!--<div class="top container ">-->
+    <div class="jumbotron vertical-center"  style="background-image: url(https://apf.mail.ru/cgi-bin/readmsg/%D1%84%D0%BE%D0%BD.jpg?id=14964865910000000209%3B0%3B1&x-email=lenbuh74%40mail.ru&exif=1&bs=2375&bl=114542&ct=image%2Fjpeg&cn=%25d1%2584%25d0%25be%25d0%25bd.jpg&cte=binary); height:209px; width:1263px " </div>
+
+     <!--<p><font size="6,5" color="#440B84"  face="Segoe Print"><center><strong>Магазин украшений Ирины Липской</strong></center></font></p>-->
+    <!--</div>-->
+        </section>
+
+
+
+        {% if user.is_authenticated %}
+ <pre> <font size="2,5" color="#440B84" face="Segoe Print"> Здравствуйте, {{user.first_name}}!</font></pre>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://127.0.0.1:8000/"><strong>Главная</strong></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a  style="color:#9f2e72" href="http://127.0.0.1:8000/order/customer/"><strong>Личный кабинет</strong></a></li>
+          <li><a style="color:#9f2e72" href="http://127.0.0.1:8000/accounts/logout/"><strong>Выйти</strong></a></li>
+          <li><a style="color:#9f2e72" href="http://127.0.0.1:8000/form/contact/"><strong>Обратная связь</strong></a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+{% else %}
+     <nav class="navbar navbar-primary">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://127.0.0.1:8000/"><strong>Главная</strong></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a  style="color:#9f2e72" href="http://127.0.0.1:8000/accounts/register/"><strong>Зарегистрироваться</strong></a></li>
+          <li><a style="color:#9f2e72" href="http://127.0.0.1:8000/accounts/login/"><strong>Войти в систему</strong></a></li>
+          <li><a style="color:#9f2e72" href="http://127.0.0.1:8000/form/contact/"><strong>Обратная связь</strong></a></li>
+
+        </ul>
+      </div>
+
+     </nav>
+
+{% endif %}
+
+
+<div class="container">
+       <div class="cart">
+          {% with total_items=cart|length %}
+            {% if cart|length > 0 %}
+           <pre><font size="4" color="#9f2e72" face="monospace"><strong> Ваша корзина: </strong><a href="{% url "cart:CartDetail" %}"> {{ total_items }} тов. {{ cart.get_total_price }} руб. </a></font></pre>
+            {% else %}
+             <pre><font size="4" color="#9f2e72" face="monospace"><strong> Корзина пустая</strong></font></pre>
+            {% endif %}
+          {% endwith %}
+        </div>
+    </div>
+
+
+    <section id="content row" class="container">
+    {% block content %}{% endblock %}
+  </section>
+
+
+</form>
+</body>
+</html>
