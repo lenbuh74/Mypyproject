@@ -1,0 +1,81 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  Заказ {{ order.id }} {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+
+<nav class="navmenu navmenu-default col-xs-12 col-md-2" role="navigation">
+    <ul class="nav navmenu-nav">
+    <li><a href="http://127.0.0.1:8000/order/customer/"><font size="4" color="#440B84" face="monospace"><strong>История заказов</strong></font></a></li>
+    </ul>
+
+</nav>
+
+<div class="container col-sm-9" >
+  <h1><font size="6" color="#440B84" face="Segoe Print">Заказ {{ order.id }}</font></h1>
+  <a href="#" onclick="window.print()" class="btn btn-primary"><font size="4" face="monospace">Распечатать заказ</font></a>
+<p> </p>
+<p> </p>
+  <table width="100%" class="table">
+    <tr>
+      <th><font size="4" color="#9f2e72" face="monospace">Создан</font></th>
+      <td><font size="3" color="#440B84" face="Segoe Print">{{ order.created }}</font></td>
+    </tr>
+    <tr>
+      <th><font size="4" color="#9f2e72" face="monospace">Заказчик</font></th>
+      <td><font size="3" color="#440B84" face="Segoe Print">{{ order.first_name }} {{ order.last_name }}</font></td>
+    </tr>
+    <tr>
+      <th><font size="4" color="#9f2e72" face="monospace">E-mail</font></th>
+      <td><font size="3" color="#440B84" face="Segoe Print"><a href="mailto:{{ order.email }}">{{ order.email }}</a></font></td>
+    </tr>
+    <tr>
+      <th><font size="4" color="#9f2e72" face="monospace">Адрес</font></th>
+      <td><font size="3" color="#440B84" face="Segoe Print">{{ order.address }}</font></td>
+    </tr>
+    <tr>
+      <th><font size="4" color="#9f2e72" face="monospace">Полная стоймость</font></th>
+      <td><font size="3" color="#440B84" face="Segoe Print">{{ order.get_total_cost }} руб.</font></td>
+    </tr>
+    <tr>
+      <th><font size="4" color="#9f2e72" face="monospace">Статус</font></th>
+      <td><font size="3" color="#440B84" face="Segoe Print">{% if order.paid %}Оплачен{% else %}В ожидании оплаты{% endif %}</font></td>
+    </tr>
+  </table>
+
+  <div class="module">
+    <div class="tabular inline-related list-related">
+      <h2><font size="6" color="#440B84" face="Segoe Print">Заказанные товары</font></h2>
+
+      <pre><table class="table">
+
+         <thead>
+          <tr>
+            <th><font size="4" color="#9f2e72" face="monospace">Товар</font></th>
+            <th><font size="4" color="#9f2e72" face="monospace">Цена</font></th>
+            <th><font size="4" color="#9f2e72" face="monospace">Количество</font></th>
+            <th><font size="4" color="#9f2e72" face="monospace">Стоймость всего</font></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in order.items.all  %}
+            <tr class="row{% cycle "1" "2" %}">
+              <td><font size="3" color="#440B84" face="Segoe Print">{{ item.product.name }}</font></td>
+              <td><font size="3" color="#440B84" face="Segoe Print">{{ item.price }} руб.</font></td>
+              <td><font size="3" color="#440B84" face="Segoe Print">{{ item.quantity }}</font></td>
+              <td><font size="3" color="#440B84" face="Segoe Print">{{ item.get_cost }} руб.</font></td>
+            </tr>
+          {% endfor %}
+          <tr class="total">
+            <td colspan="3"><font size="5,5" color="#9f2e72" face="monospace"><strong>Всего</strong></font></td>
+            <td class="num"><font size="5,5" color="#9f2e72" face="monospace"><strong>{{ order.get_total_cost }} руб.</strong></font></td>
+          </tr> </tbody> </table>
+       </div> </pre>
+
+  </div>
+  </div>
+{% endblock %}
