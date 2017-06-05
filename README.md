@@ -40,4 +40,4 @@
 
 
 #### Корзина покупателя 
-![alt text]https://cloud.githubusercontent.com/assets/22623962/26783639/df84b552-4a01-11e7-9f3b-6ac06c9f0eef.jpg)
+![alt text](https://cloud.githubusercontent.com/assets/22623962/26783639/df84b552-4a01-11e7-9f3b-6ac06c9f0eef.jpg)
