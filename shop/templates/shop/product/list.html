@@ -1,0 +1,67 @@
+{% extends 'shop/base.html' %}
+
+{% load static %}
+
+{% block title %}
+  {% if category %} {{ category.name }} {% else %} Страница товаров {% endif %}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div  class="container">
+{% load staticfiles %}
+     <font size="3" color="#9f2e72" face="monospace">   Поделитесь с друзьями в социальных сетях           </font>
+<a href="http://vk.com/share.php?url=http://127.0.0.1:8000/{{ article.get_absolute_url }}"
+   target="_blank" rel="nofollow">
+    <img src="https://pp.userapi.com/c543104/v543104095/1783c/cOtdLh_Fw6w.jpg" width="25" height="25" >
+</a>
+<a href="https://twitter.com/share?url=http://127.0.0.1:8000/{{ article.get_absolute_url }}"
+   target="_blank" rel="nofollow">
+    <img src="http://icon-icons.com/icons2/535/PNG/512/Twitter-Icon_icon-icons.com_52899.png" width="25" height="25">
+</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/{{ article.get_absolute_url }}"
+   target="_blank" rel="nofollow">
+    <img src="http://icon-icons.com/icons2/122/PNG/512/facebook_socialnetwork_20047.png" width="25" height="25">
+</a>
+<a href="https://plus.google.com/share?url=http://127.0.0.1:8000/{{ article.get_absolute_url }}"
+   target="_blank" rel="nofollow">
+    <img src="http://s1.iconbird.com/ico/2013/9/446/w512h5121380376600FlurryGoogleAlt.png" width="25" height="25">
+</a>
+</div>
+
+<nav class="navmenu navmenu-default col-xs-10 col-md-3" role="navigation">
+  <h3><font size="4,5" color="#9f2e72" face="Segoe Print">Выберите категорию</font></h3>
+    <ul class="nav navmenu-nav">
+    <li>{% if not category %} {% endif %}
+        <a href="{% url "shop:ProductList" %}">Все</a></li>
+    <li>{% for cat in categories %}
+        <li {% if category.slug == cat.slug %} class="selected" {% endif %}>
+          <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a></li>
+    {% endfor %}</ul>
+
+</nav>
+
+
+  </div>
+  <div id="main" class="product_list col-sm-9">
+    <h1>{% if category %}<font size="6" color="#440B84" face="Segoe Print">{{ category.name }}</font>{% else %} <font
+            size="5" color="#9f2e72" face="Segoe Print">Товары</font>{% endif %}</h1>
+    <div class="items row">
+      {% for product in products %}
+        <div class="item col-sm-4">
+          <a href="{{ product.get_absolute_url }}">
+            <img class="img-thumbnail"   src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no-image.jpg"%}{% endif %}" class="img-responsive" >
+          </a>
+          <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
+          {{ product.price }} руб.
+    </div>{% endfor %}
+    </div>
+
+
+  </div>
+{% endblock %}</code>
+</pre>
+
